@@ -18,6 +18,8 @@ export default class Login extends Component {
 
                 const user = result.data
                 storage.saveUser(user)
+
+                console.log("===", this.props.history)
                 
                 this.props.history.replace('/admin')
             } else {

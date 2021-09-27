@@ -20,7 +20,7 @@ export default class AddForm extends Component {
 
     componentDidMount() {
         this.props.setForm(this.formRef.current);
-      }
+    }
 
     render() {
         const { categories, parentId } = this.props;
@@ -38,24 +38,24 @@ export default class AddForm extends Component {
             //     </Item>
             // </Form>
             <Form ref={this.formRef}>
-            <Item name="parentId" initialValue={parentId}>
-              <Select>
-                <Option value="0">一级分类</Option>
-                {categories.map((item) => {
-                  return (
-                    <Option key={item._id} value={item._id}>
-                      {item.name}
-                    </Option>
-                  );
-                })}
-              </Select>
-            </Item>
-            <Item
-              name="categoryName"
-              rules={[{ required: true, message: "请输入分类名称" }]}
-            >
-              <Input placeholder="请输入分类名称" />
-            </Item>
+              <Item name="parentId" initialValue={parentId}>
+                <Select>
+                  <Option value="0">一级分类</Option>
+                  {categories.map((item) => {
+                    return (
+                      <Option key={item._id} value={item._id}>
+                        {item.name}
+                      </Option>
+                    );
+                  })}
+                </Select>
+              </Item>
+              <Item
+                name="categoryName"
+                rules={[{ required: true, message: "请输入分类名称" }]}
+              >
+                <Input placeholder="请输入分类名称" />
+              </Item>
           </Form>
         )
     }

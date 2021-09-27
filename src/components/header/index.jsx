@@ -15,7 +15,7 @@ class Header extends Component {
         Modal.confirm({
             title: '',
             icon: <ExclamationCircleOutlined />,
-            content: '确定要推出登录嘛?',
+            content: '确定要退出登录吗?',
             onOk:  ()=> {
             //   return new Promise((resolve, reject) => {
             //     setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
@@ -37,7 +37,7 @@ class Header extends Component {
             if (item.key === path) {
                 title = item.title
             } else if(item.children) {
-                const cItem = item.children.find(cItem => cItem.key === path)
+                const cItem = item.children.find(cItem => path.indexOf(cItem.key) === 0)
                 if(cItem) {
                     title = cItem.title
                 }
